@@ -98,3 +98,9 @@ webencodings==0.5.1
 websockets==11.0.3
 Werkzeug==2.3.4
 zopfli==0.2.2
+cs50
+Flask
+Flask-Session
+gunicorn
+psycopg2
+requests

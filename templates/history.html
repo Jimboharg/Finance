@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get a Quote
+{% endblock %}
+
+{% block main %}
+    <div>
+      <h1>Hi {{name}}</h1>
+      <h2>Account History</h2>
+    </div>
+    <table>
+      <thead >
+          <tr>
+              <th>Transaction Id</th>
+              <th>Symbol</th>
+              <th>Company</th>
+              <th>Amount</th>
+              <th>Price</th>
+              <th>Type</th>
+              <th>Time</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          {% for share in userHistory %}
+              <tr>
+                  <td>{{ share.transaction_id }}</td>
+                  <td>{{ share.symbol }}</td>
+                  <td>{{ share.name }}</td>
+                  <td>{{ share.number }}</td>
+                  <td>{{ share.price }}</td>
+                  <td>{{ share.type }}</td>
+                  <td>{{ share.time }}</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+{% endblock %}

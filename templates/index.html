@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get a Quote
+{% endblock %}
+
+{% block main %}
+    <div>
+      <h1>Hi {{name}}</h1>
+      <h2>Here's your current portfolio</h2>
+    </div>
+    <table>
+      <thead >
+          <tr>
+              <th>Symbol</th>
+              <th>Company</th>
+              <th>Shares</th>
+              <th>Value</th>
+              <th>Current Price</th>
+              <th>Current Value</th>
+              <th>Current Profit</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          {% for share in holding %}
+              <tr>
+                  <td>{{ share.symbol }}</td>
+                  <td>{{ share.company }}</td>
+                  <td>{{ share.shares }}</td>
+                  <td>{{ share.total }}</td>
+                  <td>{{ share.currentPrice }}</td>
+                  <td>{{ share.currentValue }}</td>
+                  <td>{{ share.profit }}</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  <table>
+    <thead>
+        <tr>
+            <th>Funds Available</th>
+            <th>Total Holding</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ balance }}</td>
+            <td>{{ grandTotal }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

@@ -60,7 +60,7 @@ def index():
     grandTotal = usd(unformattedBalance + total)
 
     # display all of the above details in a table on the home screen
-    return render_template("index.html", name = name, holding = holding, balance = balance, grandTotal = grandTotal)
+    return render_template("index.html", name = name.capitalize(), holding = holding, balance = balance, grandTotal = grandTotal)
 
 
 @app.route("/buy", methods=["GET", "POST"])

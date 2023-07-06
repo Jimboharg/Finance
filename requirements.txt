@@ -3,4 +3,5 @@ Flask
 Flask-Session
 gunicorn
 pytz
+flask_cors
 requests

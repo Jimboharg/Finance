@@ -1,6 +1,7 @@
 import os
 import datetime
 
+from flask_cors import CORS
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -11,6 +12,8 @@ from helpers import apology, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
+
+CORS(app)
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd
